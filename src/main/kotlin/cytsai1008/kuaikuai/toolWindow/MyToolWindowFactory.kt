@@ -1,4 +1,4 @@
-package com.github.cytsai1008.kuaikuai.toolWindow
+package cytsai1008.kuaikuai.toolWindow
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.wm.ToolWindow

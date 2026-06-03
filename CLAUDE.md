@@ -35,5 +35,5 @@ Located at `src/main/resources/images/kuaikuai.png` (470×596, trimmed of transp
 
 ## Key Conventions
 
-- Plugin targets IntelliJ IDEA `2025.2.6.2` (set in `build.gradle.kts`), plugin ID: `com.github.cytsai1008.kuaikuai`.
+- Plugin targets IntelliJ IDEA `2025.2.6.2` (set in `build.gradle.kts`), plugin ID: `cytsai1008.kuaikuai`.
 - Releases are driven by `CHANGELOG.md` (Keep a Changelog format); CI reads it to auto-generate release notes.

@@ -1,4 +1,4 @@
-package com.github.cytsai1008.kuaikuai.services
+package cytsai1008.kuaikuai.services
 
 import com.intellij.openapi.components.Service
 import com.intellij.openapi.project.Project

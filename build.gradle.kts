@@ -1,9 +1,22 @@
+import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
 import org.jetbrains.intellij.platform.gradle.TestFrameworkType
 
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("org.jetbrains.intellij.platform")
     id("org.jetbrains.changelog")
+}
+
+intellijPlatform {
+    pluginVerification {
+        ides {
+            select {
+                types.set(listOf(IntelliJPlatformType.IntellijIdeaCommunity))
+                sinceBuild.set("252")
+                untilBuild.set("252.*")
+            }
+        }
+    }
 }
 
 dependencies {

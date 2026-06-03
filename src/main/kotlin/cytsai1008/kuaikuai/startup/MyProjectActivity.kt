@@ -1,4 +1,4 @@
-package com.github.cytsai1008.kuaikuai.startup
+package cytsai1008.kuaikuai.startup
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.startup.ProjectActivity
