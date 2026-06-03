@@ -1,45 +1,63 @@
 package com.github.cytsai1008.kuaikuai.toolWindow
 
-import com.intellij.openapi.components.service
-import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.wm.ToolWindow
 import com.intellij.openapi.wm.ToolWindowFactory
-import com.intellij.ui.components.JBLabel
-import com.intellij.ui.components.JBPanel
+import com.intellij.openapi.wm.ToolWindowType
 import com.intellij.ui.content.ContentFactory
-import com.github.cytsai1008.kuaikuai.MyBundle
-import com.github.cytsai1008.kuaikuai.services.MyProjectService
-import javax.swing.JButton
-
+import java.awt.Dimension
+import java.awt.Graphics
+import java.awt.Graphics2D
+import java.awt.RenderingHints
+import java.awt.event.ComponentAdapter
+import java.awt.event.ComponentEvent
+import java.awt.image.BufferedImage
+import javax.imageio.ImageIO
+import javax.swing.JPanel
 
 class MyToolWindowFactory : ToolWindowFactory {
 
-    init {
-        thisLogger().warn("Don't forget to remove all non-needed sample code files with their corresponding registration entries in `plugin.xml`.")
-    }
-
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
-        val myToolWindow = MyToolWindow(toolWindow)
-        val content = ContentFactory.getInstance().createContent(myToolWindow.getContent(), null, false)
+        toolWindow.setType(ToolWindowType.FLOATING, null)
+        val panel = KuaiKuaiPanel()
+        val content = ContentFactory.getInstance().createContent(panel, null, false)
         toolWindow.contentManager.addContent(content)
     }
 
     override fun shouldBeAvailable(project: Project) = true
+}
 
-    class MyToolWindow(toolWindow: ToolWindow) {
+private class KuaiKuaiPanel : JPanel() {
 
-        private val service = toolWindow.project.service<MyProjectService>()
+    private val source: BufferedImage? =
+        javaClass.getResourceAsStream("/images/kuaikuai.png")?.let { ImageIO.read(it) }
 
-        fun getContent() = JBPanel<JBPanel<*>>().apply {
-            val label = JBLabel(MyBundle["randomLabel", "?"])
+    init {
+        preferredSize = Dimension(80, 100)
+        addComponentListener(object : ComponentAdapter() {
+            override fun componentResized(e: ComponentEvent) = repaint()
+        })
+    }
 
-            add(label)
-            add(JButton(MyBundle["shuffle"]).apply {
-                addActionListener {
-                    label.text = MyBundle["randomLabel", service.getRandomNumber()]
-                }
-            })
-        }
+    override fun paintComponent(g: Graphics) {
+        super.paintComponent(g)
+        val img = source ?: return
+        val g2 = g as Graphics2D
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR)
+        g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY)
+
+        val padding = 12
+        val panelW = width - padding * 2
+        val panelH = height - padding * 2
+        val imgW = img.width
+        val imgH = img.height
+
+        val scale = minOf(panelW.toDouble() / imgW, panelH.toDouble() / imgH)
+        val drawW = (imgW * scale).toInt()
+        val drawH = (imgH * scale).toInt()
+        val x = padding + (panelW - drawW) / 2
+        val y = padding + (panelH - drawH) / 2
+
+        g2.drawImage(img, x, y, drawW, drawH, null)
     }
 }

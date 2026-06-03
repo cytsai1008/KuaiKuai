@@ -4,16 +4,20 @@
     <name>KuaiKuai</name>
     <vendor>cytsai1008</vendor>
     <description><![CDATA[
-        Enter short description for your plugin here.<br>
-        <em>most HTML tags may be used</em>
+        乖乖 (KuaiKuai) — a lucky snack for Taiwanese programmers.<br>
+        Displays the 乖乖 snack image in a tool window to bless your servers and keep them well-behaved.
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <resource-bundle>messages.MyBundle</resource-bundle>
-
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.cytsai1008.kuaikuai.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <toolWindow
+            factoryClass="com.github.cytsai1008.kuaikuai.toolWindow.MyToolWindowFactory"
+            id="KuaiKuai"
+            anchor="right"
+            canCloseContents="false"
+        />
         <postStartupActivity implementation="com.github.cytsai1008.kuaikuai.startup.MyProjectActivity" />
+        <projectService serviceImplementation="com.github.cytsai1008.kuaikuai.services.MyProjectService"/>
     </extensions>
 </idea-plugin>
