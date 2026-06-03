@@ -3,16 +3,17 @@
     <id>com.github.cytsai1008.kuaikuai</id>
     <name>KuaiKuai</name>
     <vendor>cytsai1008</vendor>
+    <description><![CDATA[
+        Enter short description for your plugin here.<br>
+        <em>most HTML tags may be used</em>
+    ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.cytsai1008.kuaikuai.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.cytsai1008.kuaikuai.services.MyProjectService"/>
-    </extensions>
+    <resource-bundle>messages.MyBundle</resource-bundle>
 
-    <applicationListeners>
-        <listener class="com.github.cytsai1008.kuaikuai.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow factoryClass="com.github.cytsai1008.kuaikuai.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <postStartupActivity implementation="com.github.cytsai1008.kuaikuai.startup.MyProjectActivity" />
+    </extensions>
 </idea-plugin>
