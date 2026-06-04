@@ -7,7 +7,7 @@
 <!-- Plugin description -->
 KuaiKuai (乖乖) is a JetBrains IDE plugin that displays the iconic 乖乖 snack image — a beloved lucky charm in Taiwanese programmer culture. The snack is traditionally placed on top of servers and computers to keep them running smoothly.
 
-The plugin shows the 乖乖 image in a side tool window anchored to the right of your IDE, bringing good luck to your development environment.
+The plugin shows the 乖乖 image in a side tool window anchored to the right of your IDE, bringing good luck to your development environment.  
 ![Screenshot.png](Screenshot.png)
 <!-- Plugin description end -->
 
