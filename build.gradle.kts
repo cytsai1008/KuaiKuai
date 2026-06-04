@@ -8,6 +8,10 @@ plugins {
 }
 
 intellijPlatform {
+    publishing {
+        token.set(providers.environmentVariable("PUBLISH_TOKEN"))
+    }
+
     pluginVerification {
         ides {
             select {

@@ -8,6 +8,8 @@
         This plugin shows an image of the 乖乖 snack in a tool window, hoping your code will run smoothly and stay free of bugs.<br>
         這是一個為台灣程式設計師祈求程式正常運作的乖乖插件。<br>
         它會在工具視窗中顯示一張乖乖的圖片，希望你的程式碼能夠乖乖地運行，沒有 bug。<br>
+
+        Disclaimer: 乖乖 and KuaiKuai and logos are trademarks of Kuai Kuai Co., Ltd. This plugin is an unofficial fan project and is not affiliated with or endorsed by Kuai Kuai Co., Ltd.
     ]]></description>
 
     <idea-version since-build="251"/>
@@ -20,6 +22,7 @@
             id="KuaiKuai"
             anchor="right"
             canCloseContents="false"
+            icon="/icons/kuaikuai.svg"
         />
         <postStartupActivity implementation="cytsai1008.kuaikuai.startup.MyProjectActivity" />
         <projectService serviceImplementation="cytsai1008.kuaikuai.services.MyProjectService"/>
