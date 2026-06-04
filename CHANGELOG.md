@@ -4,6 +4,12 @@
 
 ## [Unreleased]
 
+## [0.0.4] - 2026-06-04
+
+### Added
+
+- Make the update not require a restart, so that users can get the latest version immediately without restarting their IDE.
+
 ## [0.0.1] - 2026-06-04
 
 ### Added
@@ -25,9 +31,8 @@
 
 - Push new version to JetBrains Marketplace to avoid version conflicts with local development versions.
 
-
-## [0.0.4] - 2026-06-04
-
-### Added
-
-- Make the update not require a restart, so that users can get the latest version immediately without restarting their IDE.
+[Unreleased]: https://github.com/cytsai1008/KuaiKuai/compare/0.0.4...HEAD
+[0.0.4]: https://github.com/cytsai1008/KuaiKuai/compare/0.0.1...0.0.4
+[0.0.3]: https://github.com/cytsai1008/KuaiKuai/commits/0.0.3
+[0.0.2]: https://github.com/cytsai1008/KuaiKuai/compare/0.0.3...0.0.2
+[0.0.1]: https://github.com/cytsai1008/KuaiKuai/compare/0.0.2...0.0.1
