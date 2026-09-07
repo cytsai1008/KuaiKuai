@@ -4,6 +4,14 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Bump Gradle to 9.7.1 and IntelliJ Platform Gradle Plugin to 2.18.1.
+
+### Removed
+
+- Remove the unused message bundle, which relied on a deprecated `DynamicBundle` constructor.
+
 ## [0.0.4] - 2026-06-04
 
 ### Added
