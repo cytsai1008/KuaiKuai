@@ -38,5 +38,5 @@ Plugin based on the [IntelliJ Platform Plugin Template][template].
 
 ---
 ## TODO
-- [ ] Add settings page to allow users to choose different 乖乖 images or custom images.
-- [ ] Add an option to toggle when failed, shows the red 乖乖 image.
+- [x] Add settings page to allow users to choose different 乖乖 images or custom images.
+- [x] Add an option to toggle when failed, shows the red 乖乖 image.

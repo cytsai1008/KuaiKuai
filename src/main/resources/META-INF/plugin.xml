@@ -27,6 +27,12 @@
             canCloseContents="false"
             icon="/icons/kuaikuai.svg"
         />
+        <applicationConfigurable
+            parentId="tools"
+            instance="cytsai1008.kuaikuai.settings.KuaiKuaiConfigurable"
+            id="cytsai1008.kuaikuai.settings"
+            displayName="KuaiKuai"
+        />
         <postStartupActivity implementation="cytsai1008.kuaikuai.startup.MyProjectActivity" />
         <projectService serviceImplementation="cytsai1008.kuaikuai.services.MyProjectService"/>
     </extensions>

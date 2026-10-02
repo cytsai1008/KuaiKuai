@@ -20,6 +20,11 @@ class KuaiKuaiTest : BasePlatformTestCase() {
         assertTrue("image height should be positive", image.height > 0)
     }
 
+    fun testChocoImageIsValidPng() {
+        val image = javaClass.getResourceAsStream("/images/kuaikuai_choco.png")!!.use { ImageIO.read(it) }
+        assertNotNull("kuaikuai_choco.png must be readable by ImageIO", image)
+    }
+
     fun testToolWindowFactoryShouldBeAvailable() {
         val factory = MyToolWindowFactory()
         assertTrue(factory.shouldBeAvailable(project))

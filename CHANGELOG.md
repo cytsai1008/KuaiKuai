@@ -4,6 +4,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- Add a settings page (Settings > Tools > KuaiKuai) to choose the classic, chocolate, or a custom image.
+- Add an option to show the red chocolate 乖乖 when a run ends with a non-zero exit code.
+
 ## [0.0.5] - 2026-09-07
 
 ### Changed
